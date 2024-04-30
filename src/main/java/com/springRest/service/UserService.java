@@ -11,8 +11,7 @@ public class UserService
     @Autowired
     private UserRepository repository;
 
-    public UserService(UserRepository userRepository)
-    {
+    public UserService(UserRepository userRepository) {
         this.repository = userRepository;
     }
     public void save(User user)

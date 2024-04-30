@@ -16,6 +16,8 @@ public class User
     private int id;
     @Column(name="name")
     private String name;
+    @Column(name="gender")
+    private String gender;
     @Column(name="email")
     private String email;
     @Column(name="password")
@@ -35,9 +37,10 @@ public class User
 
     }
 
-    public User(String name, String email, String password)
+    public User(String name, String gender, String email, String password)
     {
         this.name = name;
+        this.gender = gender;
         this.email = email;
         this.password = password;
     }
@@ -58,48 +61,47 @@ public class User
         return id;
     }
 
-    public void setId(int id)
-    {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmail()
-    {
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String name) {
+        this.name = gender;
+    }
+
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public List<Role> getRoles()
-    {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles)
-    {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 }
