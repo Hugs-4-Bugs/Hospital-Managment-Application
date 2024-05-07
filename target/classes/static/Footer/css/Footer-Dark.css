@@ -69,13 +69,12 @@
   line-height: 36px;
   display: inline-block;
   text-align: center;
-  border-radius: 5%;
-  box-shadow: 0px 0px 0 5px rgb(23 221 84 / 65%);
+  border-radius: 15%;
+  box-shadow: 0 0 0 5px #55e77791;
   margin: 0 8px;
-  color: #72ee05d9;
+  color: #fff;
   opacity: 0.75;
 }
-
 .footer-dark .item.social > a:hover {
   opacity: 0.9;
 }

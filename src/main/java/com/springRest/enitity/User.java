@@ -23,7 +23,6 @@ public class User
     @Column(name="password")
     private String password;
 
-
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,CascadeType.MERGE,
                     CascadeType.PERSIST,CascadeType.REFRESH})
@@ -32,9 +31,8 @@ public class User
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 
-    public User()
-    {
-
+    public User() {
+//        String name;
     }
 
     public User(String name, String gender, String email, String password)
@@ -56,8 +54,7 @@ public class User
         roles.add(role);
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
@@ -77,8 +74,8 @@ public class User
         return gender;
     }
 
-    public void setGender(String name) {
-        this.name = gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {
@@ -105,3 +102,10 @@ public class User
         this.roles = roles;
     }
 }
+
+
+
+
+
+
+

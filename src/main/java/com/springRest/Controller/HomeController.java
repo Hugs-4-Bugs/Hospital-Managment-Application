@@ -7,10 +7,9 @@ import com.springRest.service.RoleService;
 import com.springRest.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("Home")
@@ -31,12 +30,26 @@ public class HomeController
     {
         return "Home/home";
     }
+
     @GetMapping("/home-page")
     public String sayHello(Model model)
     {
         model.addAttribute("date",new java.util.Date());
         return "Home/home";
     }
+
+    @PostMapping("/login") // Make sure the mapping matches the action attribute of the form
+    public String loginUser(@RequestParam("username") String username,
+                            @RequestParam("password") String password,
+                            HttpSession session, Model model) {
+        // Authentication logic goes here
+        // Redirect or return appropriate response based on authentication result
+        return "redirect:/Home/home-page";
+
+    }
+
+
+
     @GetMapping("/login")
     public String login()
     {

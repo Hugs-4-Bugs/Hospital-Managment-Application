@@ -1,10 +1,491 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
+<!--    <title>Hospital Mgt</title>-->
+<!--    <link rel="stylesheet" href="/Footer/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/fonts/ionicons.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Article-List.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Footer-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Team-Boxed.css">-->
+<!--    <link rel="stylesheet" href="/Register/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Team-Boxed.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div th:replace="fragments/nav-bar/nav-bar :: nav"></div>-->
+<!--<div class="register-photo">-->
+<!--    <div class="form-container">-->
+<!--        <div class="image-holder"></div>-->
+<!--        <form action="#" th:action="@{/Home/register-user}" th:object="${user}" method="POST">-->
+<!--            <h2 class="text-center"><strong>Create</strong> an account.</h2>-->
+<!--            <div class="form-group"><input class="form-control" type="test" th:field="*{name}" placeholder="Name"></div>-->
+
+<!--            <div class="form-group"><input class="form-control" type="email" th:field="*{email}" placeholder="Email"></div>-->
+<!--            <div class="form-group"><input class="form-control" type="password" th:field="*{password}" placeholder="Password">-->
+<!--            </div>-->
+<!--            <div class="form-group"><input class="form-control" type="password" placeholder="Repeat Password"></div>-->
+
+<!--            <select th:field="*{roles}" class="form-control" placeholder="Select Doctor">-->
+<!--                <option th:each="temp : ${roleList}" th:value="${temp.id}" th:text="${temp.name}"></option>-->
+
+<!--            </select>-->
+
+<!--            <div class="form-group">-->
+<!--                <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I-->
+<!--                    agree to the license terms.</label></div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <button class="btn btn-primary btn-block" type="submit">Sign Up</button>-->
+<!--            </div>-->
+<!--            <a class="already" th:href="@{/Home/login}">You already have an account? Login here.</a></form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/Register/js/jquery.min.js"></script>-->
+<!--<script src="/Register/bootstrap/js/bootstrap.min.js"></script>-->
+<!--<div th:replace="fragments/Footer/Footer :: footer"></div>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
+<!--    <title>Hospital Mgt</title>-->
+<!--    <link rel="stylesheet" href="/Footer/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/fonts/ionicons.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Article-List.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Footer-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Team-Boxed.css">-->
+<!--    <link rel="stylesheet" href="/Register/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Team-Boxed.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div th:replace="fragments/nav-bar/nav-bar :: nav"></div>-->
+<!--<div class="register-photo">-->
+<!--    <div class="form-container">-->
+<!--        <div class="image-holder"></div>-->
+<!--        <form id="registrationForm" th:action="@{/Home/register-user}" th:object="${user}" method="POST">-->
+<!--            <h2 class="text-center"><strong>Create</strong> an account.</h2>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="text" th:field="*{name}" placeholder="Name">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="email" id="email" th:field="*{email}" placeholder="Email">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" th:field="*{password}" placeholder="Password">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" placeholder="Repeat Password">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <select class="form-control" th:field="*{gender}">-->
+<!--                    <option value="">Select Gender</option>-->
+<!--                    <option value="Male">Male</option>-->
+<!--                    <option value="Female">Female</option>-->
+<!--                    <option value="Transgender">Transgender</option>-->
+<!--                    <option value="Prefer not to say">Prefer not to say</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <select th:field="*{roles}" class="form-control" placeholder="Select Doctor">-->
+<!--                <option th:each="temp : ${roleList}" th:value="${temp.id}" th:text="${temp.name}"></option>-->
+<!--            </select>-->
+
+<!--            <div class="form-group">-->
+<!--                <div class="form-check">-->
+<!--                    <label class="form-check-label">-->
+<!--                        <input class="form-check-input" type="checkbox">-->
+<!--                        I agree to the license terms.-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <button class="btn btn-primary btn-block" type="button" onclick="validateEmail()">Sign Up</button>-->
+<!--            </div>-->
+<!--            <a class="already" th:href="@{/Home/login}">Already have an account? Login here.</a>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/Register/js/jquery.min.js"></script>-->
+<!--<script src="/Register/bootstrap/js/bootstrap.min.js"></script>-->
+<!--<script>-->
+<!--    function validateEmail() {-->
+<!--        var email = document.getElementById("email").value;-->
+<!--        var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;-->
+<!--        // Explanation of regex:-->
+<!--        // ^                  Start of string-->
+<!--        // (?=.*[A-Z])        At least one uppercase letter-->
+<!--        // (?=.*\d)           At least one digit-->
+<!--        // (?=.*[@$!%*?&])    At least one special character-->
+<!--        // [A-Za-z\d@$!%*?&]  Allowed characters (letters, digits, and special characters)-->
+<!--        // {8,}               Minimum length of 8 characters-->
+<!--        // $                  End of string-->
+
+<!--        if (regex.test(email)) {-->
+<!--            document.getElementById("registrationForm").submit();-->
+<!--        } else {-->
+<!--            alert("Email must contain at least one uppercase letter, one digit, and one special character, and be at least 8 characters long.");-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--<div th:replace="fragments/Footer/Footer :: footer"></div>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
+<!--    <title>Hospital Mgt</title>-->
+<!--    <link rel="stylesheet" href="/Footer/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/fonts/ionicons.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Article-List.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Footer-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Team-Boxed.css">-->
+<!--    <link rel="stylesheet" href="/Register/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Team-Boxed.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div th:replace="fragments/nav-bar/nav-bar :: nav"></div>-->
+<!--<div class="register-photo">-->
+<!--    <div class="form-container">-->
+<!--        <div class="image-holder"></div>-->
+<!--        <form id="registrationForm" th:action="@{/Home/register-user}" th:object="${user}" method="POST">-->
+<!--            <h2 class="text-center"><strong>Create</strong> an account.</h2>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="text" th:field="*{name}" placeholder="Name">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="email" id="email" th:field="*{email}" placeholder="Email">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" id="password" th:field="*{password}" placeholder="Password">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <select class="form-control" th:field="*{gender}" placeholder="Select Gender">-->
+<!--                    <option value="">Select Gender</option>-->
+<!--                    <option value="Male">Male</option>-->
+<!--                    <option value="Female">Female</option>-->
+<!--                    <option value="Transgender">Transgender</option>-->
+<!--                    <option value="Prefer not to say">Prefer not to say</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <select th:field="*{roles}" class="form-control" placeholder="Select Doctor">-->
+<!--                <option value="">Select Doctor</option>-->
+<!--                <option th:each="temp : ${roleList}" th:value="${temp.id}" th:text="${temp.name}"></option>-->
+<!--                <option value="1">Dr. Anuj (Brain)</option>-->
+<!--                <option value="2">Dr. Manoj (Heart)</option>-->
+<!--                <option value="3">Dr. Priya (Pediatrics)</option>-->
+<!--                <option value="4">Dr. Rahul (Orthopedics)</option>-->
+<!--                <option value="5">Dr. Neha (Dermatology)</option>-->
+<!--                <option value="6">Dr. Amit (Gastroenterology)</option>-->
+<!--                <option value="7">Dr. Pooja (Oncology)</option>-->
+<!--                <option value="8">Dr. Sanjay (Cardiology)</option>-->
+<!--                <option value="9">Dr. Sunita (Endocrinology)</option>-->
+<!--                <option value="10">Dr. Rajesh (Nephrology)</option>-->
+<!--                <option value="11">Dr. Sonali (Psychiatry)</option>-->
+<!--                <option value="12">Dr. Vishal (Pulmonology)</option>-->
+<!--                <option value="13">Dr. Sneha (Ophthalmology)</option>-->
+<!--                <option value="14">Dr. Ramesh (Urology)</option>-->
+<!--                <option value="15">Dr. Deepak (Rheumatology)</option>-->
+<!--                <option value="16">Dr. Priyanka (Obstetrics & Gynecology)</option>-->
+<!--                <option value="17">Dr. Vikram (ENT)</option>-->
+<!--                <option value="18">Dr. Anu (Dentistry)</option>-->
+<!--                <option value="19">Dr. Varun (Plastic Surgery)</option>-->
+<!--                <option value="20">Dr. Shruti (Neurology)</option>-->
+<!--                &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+<!--            </select>-->
+
+
+<!--            <div class="form-group">-->
+<!--                <div class="form-check">-->
+<!--                    <label class="form-check-label">-->
+<!--                        <input class="form-check-input" type="checkbox" required>-->
+<!--                        I agree to the license terms.-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <button class="btn btn-primary btn-block" type="button" onclick="validateForm()">Sign Up</button>-->
+<!--            </div>-->
+<!--            <a class="already" th:href="@{/Home/login}">Already have an account? Login here.</a>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/Register/js/jquery.min.js"></script>-->
+<!--<script src="/Register/bootstrap/js/bootstrap.min.js"></script>-->
+<!--<script>-->
+<!--    function validateEmail(email) {-->
+<!--        var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;-->
+<!--        return regex.test(email);-->
+<!--    }-->
+
+<!--    function validateForm() {-->
+<!--        var email = document.getElementById("email").value;-->
+<!--        var password = document.getElementById("password").value;-->
+<!--        var confirmPassword = document.getElementById("confirmPassword").value;-->
+
+<!--        if (!validateEmail(email)) {-->
+<!--            alert("Email must contain at least one uppercase letter, one digit, and one special character, and be at least 8 characters long.");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        if (password !== confirmPassword) {-->
+<!--            alert("Password mismatched");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        document.getElementById("registrationForm").submit();-->
+<!--    }-->
+<!--</script>-->
+<!--<div th:replace="fragments/Footer/Footer :: footer"></div>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
+<!--    <title>Hospital Mgt</title>-->
+<!--    <link rel="stylesheet" href="/Footer/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/fonts/ionicons.min.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Article-List.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/Footer-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Footer/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/nav-bar/css/Team-Boxed.css">-->
+<!--    <link rel="stylesheet" href="/Register/bootstrap/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Contact-Form-Clean.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Login-Form-Dark.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Navigation-with-Button.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Registration-Form-with-Photo.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/styles.css">-->
+<!--    <link rel="stylesheet" href="/Register/css/Team-Boxed.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div th:replace="fragments/nav-bar/nav-bar :: nav"></div>-->
+<!--<div class="register-photo">-->
+<!--    <div class="form-container">-->
+<!--        <div class="image-holder"></div>-->
+<!--        <form id="registrationForm" th:action="@{/Home/register-user}" th:object="${user}" method="POST">-->
+<!--            <h2 class="text-center"><strong>Create</strong> an account.</h2>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="text" th:field="*{name}" placeholder="Name">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="email" id="email" th:field="*{email}" placeholder="Email">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" id="password" th:field="*{password}" placeholder="Password">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password">-->
+<!--            </div>-->
+
+<!--            <div class="form-group">-->
+<!--                <select class="form-control" th:field="*{gender}" placeholder="Select Gender">-->
+<!--                    <option value="">Select Gender</option>-->
+<!--                    <option value="Male">Male</option>-->
+<!--                    <option value="Female">Female</option>-->
+<!--                    <option value="Transgender">Transgender</option>-->
+<!--                    <option value="Prefer not to say">Prefer not to say</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <select th:field="*{roles}" class="form-control" placeholder="Select Doctor">-->
+<!--                <option value="">Select Doctor</option>-->
+<!--                <option th:each="temp : ${roleList}" th:value="${temp.id}" th:text="${temp.name}"></option>-->
+<!--                <option value="1">Dr. Anuj (Brain)</option>-->
+<!--                <option value="2">Dr. Manoj (Heart)</option>-->
+<!--                <option value="3">Dr. Priya (Pediatrics)</option>-->
+<!--                <option value="4">Dr. Rahul (Orthopedics)</option>-->
+<!--                <option value="5">Dr. Neha (Dermatology)</option>-->
+<!--                <option value="6">Dr. Amit (Gastroenterology)</option>-->
+<!--                <option value="7">Dr. Pooja (Oncology)</option>-->
+<!--                <option value="8">Dr. Sanjay (Cardiology)</option>-->
+<!--                <option value="9">Dr. Sunita (Endocrinology)</option>-->
+<!--                <option value="10">Dr. Rajesh (Nephrology)</option>-->
+<!--                <option value="11">Dr. Sonali (Psychiatry)</option>-->
+<!--                <option value="12">Dr. Vishal (Pulmonology)</option>-->
+<!--                <option value="13">Dr. Sneha (Ophthalmology)</option>-->
+<!--                <option value="14">Dr. Ramesh (Urology)</option>-->
+<!--                <option value="15">Dr. Deepak (Rheumatology)</option>-->
+<!--                <option value="16">Dr. Priyanka (Obstetrics & Gynecology)</option>-->
+<!--                <option value="17">Dr. Vikram (ENT)</option>-->
+<!--                <option value="18">Dr. Anu (Dentistry)</option>-->
+<!--                <option value="19">Dr. Varun (Plastic Surgery)</option>-->
+<!--                <option value="20">Dr. Shruti (Neurology)</option>-->
+<!--                &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+<!--            </select>-->
+
+
+<!--            <div class="form-group">-->
+<!--                <div class="form-check">-->
+<!--                    <label class="form-check-label">-->
+<!--                        <input class="form-check-input" type="checkbox" required>-->
+<!--                        I agree to the license terms.-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <button class="btn btn-primary btn-block" type="button" onclick="validateForm()">Sign Up</button>-->
+<!--            </div>-->
+<!--            <a class="already" th:href="@{/Home/login}">Already have an account? Login here.</a>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/Register/js/jquery.min.js"></script>-->
+<!--<script src="/Register/bootstrap/js/bootstrap.min.js"></script>-->
+<!--<script>-->
+<!--    function validateEmail(email) {-->
+<!--        var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;-->
+<!--        return regex.test(email);-->
+<!--    }-->
+
+<!--    function validateForm() {-->
+<!--        var email = document.getElementById("email").value;-->
+<!--        var password = document.getElementById("password").value;-->
+<!--        var confirmPassword = document.getElementById("confirmPassword").value;-->
+
+<!--        if (!validateEmail(password)) {-->
+<!--            alert("Password must contain at least one uppercase letter, one digit, and one special character, and be at least 8 characters long.");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        if (password !== confirmPassword) {-->
+<!--            alert("Password mismatched");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        document.getElementById("registrationForm").submit();-->
+<!--        alert("Registration Completed");-->
+<!--    }-->
+
+<!--</script>-->
+<!--<div th:replace="fragments/Footer/Footer :: footer"></div>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
+    <title>Hospital Mgt</title>
     <link rel="stylesheet" href="/Footer/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Footer/fonts/ionicons.min.css">
     <link rel="stylesheet" href="/Footer/css/Article-List.css">
@@ -24,6 +505,7 @@
     <link rel="stylesheet" href="/Register/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="/Register/css/styles.css">
     <link rel="stylesheet" href="/Register/css/Team-Boxed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -31,32 +513,123 @@
 <div class="register-photo">
     <div class="form-container">
         <div class="image-holder"></div>
-        <form action="#" th:action="@{/Home/register-user}" th:object="${user}" method="POST">
+        <form id="registrationForm" th:action="@{/Home/register-user}" th:object="${user}" method="POST">
             <h2 class="text-center"><strong>Create</strong> an account.</h2>
-            <div class="form-group"><input class="form-control" type="test" th:field="*{name}" placeholder="Name"></div>
-
-            <div class="form-group"><input class="form-control" type="email" th:field="*{email}" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" th:field="*{password}" placeholder="Password">
+            <div class="form-group">
+                <input class="form-control" type="text" th:field="*{name}" placeholder="Name">
             </div>
-            <div class="form-group"><input class="form-control" type="password" placeholder="Repeat Password"></div>
+
+            <div class="form-group">
+                <input class="form-control" type="email" id="email" th:field="*{email}" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="password" id="password" th:field="*{password}" placeholder="Password">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility()">
+                            <i id="passwordToggleIcon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+
+            <div class="form-group">
+                <select class="form-control" th:field="*{gender}" placeholder="Select Gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+            </div>
 
             <select th:field="*{roles}" class="form-control" placeholder="Select Doctor">
+                <option value="">Select Doctor</option>
                 <option th:each="temp : ${roleList}" th:value="${temp.id}" th:text="${temp.name}"></option>
-
+                <option value="1">Dr. Anuj (Brain)</option>
+                <option value="2">Dr. Manoj (Heart)</option>
+                <option value="3">Dr. Priya (Pediatrics)</option>
+                <option value="4">Dr. Rahul (Orthopedics)</option>
+                <option value="5">Dr. Neha (Dermatology)</option>
+                <option value="6">Dr. Amit (Gastroenterology)</option>
+                <option value="7">Dr. Pooja (Oncology)</option>
+                <option value="8">Dr. Sanjay (Cardiology)</option>
+                <option value="9">Dr. Sunita (Endocrinology)</option>
+                <option value="10">Dr. Rajesh (Nephrology)</option>
+                <option value="11">Dr. Sonali (Psychiatry)</option>
+                <option value="12">Dr. Vishal (Pulmonology)</option>
+                <option value="13">Dr. Sneha (Ophthalmology)</option>
+                <option value="14">Dr. Ramesh (Urology)</option>
+                <option value="15">Dr. Deepak (Rheumatology)</option>
+                <option value="16">Dr. Priyanka (Obstetrics & Gynecology)</option>
+                <option value="17">Dr. Vikram (ENT)</option>
+                <option value="18">Dr. Anu (Dentistry)</option>
+                <option value="19">Dr. Varun (Plastic Surgery)</option>
+                <option value="20">Dr. Shruti (Neurology)</option>
+                <!-- Add more options as needed -->
             </select>
 
+
             <div class="form-group">
-                <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I
-                    agree to the license terms.</label></div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" required>
+                        I agree to the license terms.
+                    </label>
+                </div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                <button class="btn btn-primary btn-block" type="button" onclick="validateForm()">Sign Up</button>
             </div>
-            <a class="already" th:href="@{/Home/login}">You already have an account? Login here.</a></form>
+            <a class="already" th:href="@{/Home/login}">Already have an account? Login here.</a>
+        </form>
     </div>
 </div>
 <script src="/Register/js/jquery.min.js"></script>
 <script src="/Register/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    function validateEmail(email) {
+        var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        return regex.test(email);
+    }
+
+    function validateForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (!validateEmail(password)) {
+            alert("Password must contain at least one uppercase letter, one digit, and one special character, and should be at least 8 characters long.");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Password mismatched");
+            return;
+        }
+
+        document.getElementById("registrationForm").submit();
+        alert("Registration Completed");
+    }
+
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var icon = document.getElementById("passwordToggleIcon");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordInput.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+</script>
 <div th:replace="fragments/Footer/Footer :: footer"></div>
 </body>
 
