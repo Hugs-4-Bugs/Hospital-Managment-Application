@@ -37,6 +37,6 @@ Features in our Application.<br/>
 <p>Login</p><br>
 <img src="assests/4Capture.PNG" width="700" height="400">
 <hr>
-<p>Team</p><br>
-<img src="assests/5Capture.PNG" width="700" height="400">
-<hr>
+<!-- <p>Team</p><br>
+<img src="assests/5Capture.PNG" width="700" height="400"> -->
+<!-- <hr> -->
